@@ -3,7 +3,7 @@ module.exports = {
   token: '',
   platform: 'bitbucket',
   onboardingConfig: {
-    extends: ['config:recommended', 'bitbucket>leonardocardozoferreira/renovate-config'],
+    extends: ['config:recommended', 'github>leonardo329cf/renovate-config'],
   },
   repositories: ['leonardocardozoferreira/jhipsterapp'],
 };
