@@ -1,0 +1,51 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "endpoint": "https://api.bitbucket.org/",
+  "token": "",
+  "platform": "bitbucket",
+  "repositories": ["leonardocardozoferreira/jhipster7"],
+  "allowedPostUpgradeCommands": ["^npm ci --ignore-scripts", "^npx ng update"],
+  "allowPostUpgradeCommandTemplating": true,
+  "packageRules": [
+    {
+      "groupName": "Angular",
+      "matchPackagePrefixes": [
+        "@angular/",
+        "typescript"
+      ]
+    },
+    {
+      "matchPackageNames": ["@angular/core"],
+      "postUpgradeTasks": {
+        "commands": [
+          "npm ci --ignore-scripts",
+          "npx ng update {{{depName}}} --from={{{currentVersion}}} --to={{{newVersion}}} --migrate-only --allow-dirty --force"
+        ],
+        "fileFilters": ["**/**"]
+      }
+    },
+    {
+      "matchPackagePrefixes": ["@angular/"],
+      "allowedVersions": "<13"
+    },
+    {
+      "matchPackagePrefixes": ["typescript"],
+      "allowedVersions": "<4.3"
+    },
+    {
+      "groupName": "Excluded dependencies",
+      "matchPackagePatterns": ["*"],
+      "excludePackagePrefixes": [
+        "@angular/",
+        "typescript"
+      ],
+      "enabled": false
+    }
+  ],
+  "prHourlyLimit": 0,
+  "prConcurrentLimit": 1,
+  "branchConcurrentLimit": 1,
+  "enabledManagers": ["npm"],
+  "useCache": false,
+  "separateMajorMinor": false
+}

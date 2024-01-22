@@ -1,0 +1,5 @@
+Added import so ng upgrade can update the import:
+import { XhrFactory } from '@angular/common/http';
+
+
+https://bitbucket.org/leonardocardozoferreira/jhipster7/pull-requests/276

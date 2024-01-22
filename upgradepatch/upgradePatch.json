@@ -1,0 +1,38 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "endpoint": "https://api.bitbucket.org/",
+  "token": "",
+  "platform": "bitbucket",
+  "extends": ["config:recommended"],
+  "repositories": ["leonardocardozoferreira/jhipster7"],
+  "packageRules": [
+    {
+      "groupName": "Angular group",
+      "matchPackagePrefixes": [
+        "@angular/", 
+        "zone.js"
+      ]
+    },
+    {
+      "groupName": "Excluded dependencies",
+      "matchPackagePatterns": ["*"],
+      "excludePackagePrefixes": [
+        "@angular/", 
+        "zone.js"
+      ],
+      "enabled": false
+    }
+  ],
+  "prHourlyLimit": 0,
+  "prConcurrentLimit": 2,
+  "branchConcurrentLimit":2,
+  "enabledManagers": ["npm"],
+  "useCache": false,
+  "separateMinorPatch": true,
+  "major": {
+    "enabled": false
+  },
+  "minor": {
+    "enabled": false
+  }
+}

@@ -1,0 +1,38 @@
+https://bitbucket.org/leonardocardozoferreira/jhipster7/pull-requests/275
+
+
+
+-------
+npm ci --ignore-scripts
+npx ng update @angular/core --from=11.2.14 --to=12.2.17 --migrate-only --allow-dirty --force
+
+Nothing to change in angular after the upgrade:
+
+leonardo.ferreira@cb-lferreira:~/jhipster/jhipster7$ npx ng update @angular/core --from=11.2.14 --to=12.2.17 --migrate-only --allow-dirty --force
+    Node.js version v21.5.0 detected.
+    Odd numbered Node.js versions will not enter LTS status and should not be used for production. For more information, please see https://nodejs.org/en/about/releases/.
+    The installed Angular CLI version is outdated.
+    Installing a temporary Angular CLI versioned 17.1.0 to perform the update.
+    ✔ Package successfully installed.
+    Node.js version v21.5.0 detected.
+    Odd numbered Node.js versions will not enter LTS status and should not be used for production. For more information, please see https://nodejs.org/en/about/previous-releases/.
+    Using package manager: npm
+    Collecting installed dependencies...
+    Found 55 dependencies.
+    ** Executing migrations of package '@angular/core' **
+
+    ▸ In Angular version 12, the type of ActivatedRouteSnapshot.fragment is nullable.
+    This migration automatically adds non-null assertions to it.
+    Migration completed (No changes made).
+
+    ▸ `XhrFactory` has been moved from `@angular/common/http` to `@angular/common`.
+    Migration completed (No changes made).
+
+    ▸ Automatically migrates shadow-piercing selector from `/deep/` to the recommended alternative `::ng-deep`.
+    Migration completed (No changes made).
+
+leonardo.ferreira@cb-lferreira:~/jhipster/jhipster7$ git status
+    No ramo renovate/angular
+    Your branch is up to date with 'origin/renovate/angular'.
+
+    nothing to commit, working tree clean
